@@ -1,1 +1,15 @@
-Product doc
+Project Setup:
+
+1) $> npm install
+
+2) Update crendtial of DB  inside of "config/config".
+
+3) Login inside of https://api.apilayer.com/exchangerates_data and collect API Key and update EXCHANGE_AUTH_KEY inside of "config/config".
+
+4) $> npm start
+
+5) Try to fetch records using beloe API:
+  a) Fetch all products and pass optional parameter in query string like  limit and currency:
+    http://localhost:3000/api/products?<limit=10>&<currency=CAD>
+  b) Fetch selected product information by id and pass optional parameter in query string like currency:
+    http://localhost:3000/api/products/1?&<currency=CAD>
