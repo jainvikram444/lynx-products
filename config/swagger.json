@@ -1,0 +1,125 @@
+{
+    "swagger": "2.0",
+    "title" : "Product API Documentation",
+    "description" : "Product API's",
+    "license": {
+        "name": "MIT",
+        "url": "https://opensource.org/licenses/MIT"
+      },
+      "version": "2.0.0",
+      "host": "localhost:3000",
+      "basePath": "/api",
+      "tags": [
+        {
+          "name": "Products",
+          "description": "API for Products Endpoints"
+        }
+      ],
+      "schemes": ["http"],
+      "consumes": ["application/json"],
+      "produces": ["application/json"],
+      "paths" :{          
+        "/products":{        
+         "get":{
+          "tags": ["Products"],
+          "summary": "API Endpoint to find all Products",
+          "description" : "Find all Products from the database",
+          "parameters":[
+            {           
+              "name": "limit",
+              "type": "integer",
+              "description": "Define the limiet for the records i.e 5. Default value is 5",
+              "in": "query"
+            },
+            {
+                "name": "currency",
+                "description": "It's optional for the currency like CAD",
+                "in": "query",
+                "type": "string",
+                "required": false
+              }
+          ],
+          "produces" : ["application/json"],
+          "responses":{
+            "200":{
+              "description" : "All the Products",
+              "schema": {
+               "$ref" : "#definitions/Products"
+              }
+            }
+          }
+        }
+        },
+        "/products/{id}":{
+          "parameters":[
+             {
+               "name" : "id",
+                "in": "path",
+                "required": "true",
+                "description": "id of the product",
+                "type": "string"
+
+             },
+             {
+              "name": "currency",
+              "description": "It's optional for the currency like CAD",
+              "in": "query",
+              "type": "string",
+              "required": false
+            }
+          ],
+          "get":{
+            "tags": ["Products"],
+            "summary": "API Endpoint to find single Product",
+            "description" : "Find one from the database",
+            "produces" : ["application/json"],
+            "responses":{
+              "200":{
+                "description" : "Product has found",
+                "schema": {
+                 "$ref" : "#definitions/Product"
+                }
+              }
+            }
+          }         
+        }      
+      },
+      "definitions":{       
+        "Product":{
+            "type": "object",            
+            "properties":{
+                "id": {
+                    "type" : "integer"
+                  },
+                "name": {
+                    "type" : "string"
+                  },
+                  "price": {
+                    "type" : "number",
+                    "format" :"float"
+                  },
+                  "isDeleted  ": {
+                    "type" : "boolean"
+                  },
+                  "productViewed": {
+                    "type" : "integer"
+                  },
+                  "createdDate": {
+                    "type" : "string"
+                  },
+                  "updatedDate":{
+                    "type": "string"
+                  },
+                  "deletedDate ":{
+                    "type": "string"
+                  }
+            }
+        },
+        "Products":{
+            "type": "array",
+            "items": {
+                "$ref": "#definitions/Product"
+            }
+        }      
+      }
+}

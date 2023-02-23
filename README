@@ -13,3 +13,5 @@ Project Setup:
     http://localhost:3000/api/products?<limit=10>&<currency=CAD>
   b) Fetch selected product information by id and pass optional parameter in query string like currency:
     http://localhost:3000/api/products/1?&<currency=CAD>
+
+6) API Documentation using swagger and opne in browser "http://localhost:3000/api-docs/"
