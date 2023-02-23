@@ -25,10 +25,7 @@ app.use(
   swaggerUi.serve,
   swaggerUi.setup(swaggerDocument, { explorer: true })
 );
-
-// router.use('/api-docs', swaggerUi.serve);
-// router.get('/api-docs', swaggerUi.setup(swaggerDocument));
-
+ 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   next(createError(404));

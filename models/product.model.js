@@ -75,4 +75,27 @@ Product.updateProductViewedById = (id, result) => {
   );
 };
 
+Product.resetProductViewed = ({}, result) => {
+  sql.query(
+    "UPDATE product SET productViewed = 0 WHERE isDeleted=false",
+    (err, res) => {
+      if (err) {
+        console.log("error: ", err);
+        result(null, err);
+        return;
+      }
+
+      if (res.affectedRows == 0) {
+        // not found Product with the id
+        result({ kind: "not_found" }, null);
+        return;
+      }
+
+      console.log("Reset productViewed of product: ");
+      result(null, { affectedRows: res.affectedRows });
+    }
+  );
+};
+
+
 module.exports = Product;

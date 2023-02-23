@@ -1,17 +1,23 @@
 Project Setup:
 
-1) $> npm install
+1) Open MySQL Workbench or PhpMyAdmin and execute the SQL script "mysql-script.sql" inside of database.
 
-2) Update crendtial of DB  inside of "config/config".
+2) $> npm install
 
-3) Login inside of https://api.apilayer.com/exchangerates_data and collect API Key and update EXCHANGE_AUTH_KEY inside of "config/config".
+3) Update crendtial of DB  inside of "config/config".
 
-4) $> npm start
+4) Login inside of https://api.apilayer.com/exchangerates_data and collect API Key and update EXCHANGE_AUTH_KEY inside of "config/config".
 
-5) Try to fetch records using beloe API:
+5) $> npm start
+
+6) Try to fetch records using beloe API:
   a) Fetch all products and pass optional parameter in query string like  limit and currency:
     http://localhost:3000/api/products?<limit=10>&<currency=CAD>
   b) Fetch selected product information by id and pass optional parameter in query string like currency:
     http://localhost:3000/api/products/1?&<currency=CAD>
 
-6) API Documentation using swagger and opne in browser "http://localhost:3000/api-docs/"
+7) API Documentation using swagger and opne in browser "http://localhost:3000/api-docs/"
+
+8) For the test follow the below steps it's consule mocha and chai lib:
+  a) Update the config file for the test db,
+  b) $> npm test
