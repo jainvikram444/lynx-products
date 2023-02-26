@@ -1,5 +1,6 @@
 //During the test the env variable is set to test
 process.env.NODE_ENV = 'test';
+process.env["NODE_CONFIG_DIR"] = "./config/env/";
 const Product = require("../models/product.model.js");
 
 //Require the test-dependencies
