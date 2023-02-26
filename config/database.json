@@ -1,0 +1,34 @@
+{
+    "development": {
+        "driver": "mysql",
+        "user": "j6zQXIyB22",
+        "password": "j6zQXIyB22",   
+        "host": "localhost",
+        "database": "j6zQXIyB22",
+        "port": "3306"
+    },  
+    "test": {
+        "driver": "mysql",
+        "user": "j6zQXIyB22",
+        "password": "j6zQXIyB22",   
+        "host": "localhost",
+        "database": "test-product",
+        "port": "3306"
+    },  
+    "staging": {
+        "driver": "mysql",
+        "user": "j6zQXIyB22",
+        "password": "j6zQXIyB22",   
+        "host": "localhost",
+        "database": "staging-product",
+        "port": "3306"
+    },   
+    "production": {
+        "driver": "mysql",
+        "user": "j6zQXIyB22",
+        "password": "j6zQXIyB22",   
+        "host": "localhost",
+        "database": "prod-product",
+        "port": "3306"
+    }
+}  

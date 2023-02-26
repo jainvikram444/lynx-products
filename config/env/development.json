@@ -1,11 +1,5 @@
 {
-    "DB": {
-        "HOST": "localhost",
-        "USER": "j6zQXIyB22",
-        "PASSWORD": "j6zQXIyB22",
-        "DATABASE": "j6zQXIyB22",
-        "PORT": 33061
-    },
+   
     "EXCHANGE": {
         "EXCHANGE_AUTH_KEY": "GpAVExOhEn1sPHM7r79nNGtASb7puxiB"
     }
