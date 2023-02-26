@@ -5,7 +5,8 @@ var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 const swaggerUi = require('swagger-ui-express');
 const swaggerDocument = require('./config/swagger.json');
- 
+process.env["NODE_CONFIG_DIR"] = "./config/env/";
+
 var app = express();
 
 // view engine setup

@@ -1,18 +1,20 @@
 const mysql = require("mysql");
-const dbConfig = require("../config/config.js");
+const config = require('../config/database.json');
+const node_env = process.env.NODE_ENV
 
 // Create a connection to the database
-const connection = mysql.createConnection({
-  host: dbConfig.DB.HOST,
-  user: dbConfig.DB.USER,
-  password: dbConfig.DB.PASSWORD,
-  port: dbConfig.DB.PORT,
-  database: dbConfig.DB.DATABASE
+const connection = mysql.createConnection({  
+  host: config[node_env]["host"],
+  user: config[node_env]["user"],
+  password: config[node_env]["password"],
+  port: config[node_env]["port"],
+  database: config[node_env]["database"]
 });
 
 // open the MySQL connection
 connection.connect(error => {
-  if (error) throw error;
+  console.log(node_env, config[node_env]);
+  if (error) throw error; 
   console.log("Successfully connected to the database.");
 });
 

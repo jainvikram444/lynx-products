@@ -3,13 +3,23 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "node ./bin/www",
-    "test": "mocha"
+    "start-dev": "set NODE_ENV=development&& node ./bin/www ",
+    "start-staging": "set NODE_ENV=staging&& node ./bin/www ",
+    "start-prod": "set NODE_ENV=production&& node ./bin/www ",
+    "start-test": "set NODE_ENV=test&& mocha --exit",
+    "db-migrate-development": "node ./node_modules/db-migrate/bin/db-migrate up --config ./config/database.json -e development",
+    "db-migrate-staging": "node ./node_modules/db-migrate/bin/db-migrate  up--config ./config/database.json -e staging",
+    "db-migrate-production": "node ./node_modules/db-migrate/bin/db-migrate up --config ./config/database.json -e production",
+    "db-migrate-test": "node ./node_modules/db-migrate/bin/db-migrate up --config ./config/database.json -e test",
+    "db-migrate-seed-test": "node ./node_modules/db-migrate/bin/db-migrate up --config ./config/database.json -e test --migrations-dir ./migrations/seeds/"
   },
   "dependencies": {
     "chai": "^4.3.7",
     "chai-http": "^4.3.0",
+    "config": "^3.3.9",
     "cookie-parser": "~1.4.4",
+    "db-migrate": "^0.11.13",
+    "db-migrate-mysql": "^2.2.0",
     "debug": "~2.6.9",
     "ejs": "~2.6.1",
     "express": "~4.16.1",

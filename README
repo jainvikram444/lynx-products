@@ -4,11 +4,17 @@ Project Setup:
 
 2) $> npm install
 
-3) Update crendtial of DB  inside of "config/config".
+3) Update crendtial of DB  inside of "config/database.json".
+  a) run below command for the migration and seeding the databse with test records(Only for the test purpose)
+    a.1) Database Migration as per enviorment: n$> pm  run db-migrate-development 
+    a.2) For the testing seeding the data: db-migrate-seed-test
 
 4) Login inside of https://api.apilayer.com/exchangerates_data and collect API Key and update EXCHANGE_AUTH_KEY inside of "config/config".
 
-5) $> npm start
+5) Run the application as per enviorment:
+  a) App running under development: $> npm run start-dev
+  b) App running under staging: $> npm  run start-staging
+  c) App running under production: $> npm  run start-prod
 
 6) Try to fetch records using beloe API:
   a) Fetch all products and pass optional parameter in query string like  limit and currency:
@@ -20,4 +26,4 @@ Project Setup:
 
 8) For the test follow the below steps it's consule mocha and chai lib:
   a) Update the config file for the test db,
-  b) $> npm test
+  b) $> npm run start-test
